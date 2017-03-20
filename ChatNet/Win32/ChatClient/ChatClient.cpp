@@ -1,5 +1,6 @@
 // ChatClient.cpp : Defines the entry point for the console application.
 //
+#include <SFML/Graphics.hpp>
 
 #include "stdafx.h"
 
@@ -7,7 +8,10 @@
 #include <iostream>
 #include <string>
 
+#include <thread>
+
 #include <SFML/Network.hpp>
+
 #include "MessageTypes.h"
 
 using TcpClient     = sf::TcpSocket;
@@ -19,8 +23,37 @@ constexpr int SERVER_TCP_PORT(53000);
 constexpr int SERVER_UDP_PORT(53001);
 
 void client();
-bool connect(TcpClient&);
-void input(TcpClient&);
+bool connect(TcpClient& _client);
+void input(TcpClient& _client);
+
+
+
+int main()
+{
+	//std::thread clientThread(client);
+
+	//sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+	//sf::CircleShape shape(100.f);
+	//shape.setFillColor(sf::Color::Green);
+
+	/*while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+
+		window.clear();
+		window.draw(shape);
+		window.display();
+	}*/
+
+	client();
+    return 0;
+}
+
 
 void client()
 {
@@ -91,9 +124,4 @@ bool connect(TcpClient& socket)
 	return true;
 }
 
-int main()
-{
-	client();
-    return 0;
-}
 

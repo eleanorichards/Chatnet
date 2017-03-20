@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)..\Libs\SFML-2.4.2\include;$(SolutionDir)Shared;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)..\Libs\SFML-2.4.2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)..\Libs\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
